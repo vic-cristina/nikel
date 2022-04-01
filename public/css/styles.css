@@ -7,6 +7,31 @@
     fixed;
 }
 
+#app {
+  background: linear-gradient(120deg, #ffffff 44.7%, #244280 45%) no-repeat
+    fixed;
+}
+
+.color-primary {
+  color: #4e0070;
+}
+
+.color-secondary {
+  color: #244280;
+}
+
+.icon-detail {
+  font-size: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.nikel-navbar {
+  border-bottom: 1px solid #bebcbc;
+  padding: 5px;
+  background-color: #ffffff;
+}
+
 .login-text {
   color: #ffffff;
   font-size: 18px;
@@ -22,6 +47,13 @@
   font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.default-button {
+  border-radius: 10px;
+  background: #4e0070;
+  color: #ffffff;
+  transition: 1.5s;
+}
+
 .login-button {
   border-radius: 10px;
   background-color: #4e0070;
@@ -31,7 +63,8 @@
   transition: 1.5s;
 }
 
-.login-button:hover {
+.login-button:hover,
+.default-button:hover {
   background-color: #244280;
   color: #ffffff;
 }
@@ -50,4 +83,10 @@
 
 .default-link:hover {
   color: #244280;
+}
+
+.info {
+  background-color: #ffffff;
+  border-radius: 20px 20px 0px 0px;
+  padding: 20px 0px 0px 0px;
 }
