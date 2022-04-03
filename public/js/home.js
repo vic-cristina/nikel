@@ -108,7 +108,9 @@ function getCashIn() {
               class="col-12 d-flex justify-content-between align-items-center"
             >
               <h3 class="mr-2 fs-2">R$${cashIn[index].value.toFixed(2)}</h3>
-              <button class="delete-button py-0" onclick="removeEntry(${index})">
+              <button class="delete-button py-0" onclick="removeEntry(${
+                index[transactions]
+              })">
               <i class="bi bi-trash-fill fs-3"></i>
             </button>                            
             </div>
@@ -200,9 +202,12 @@ function getTotal() {
 }
 
 function removeEntry(entry) {
-  const localStorage = localStorage.getItem(logged);
+  entry = localStorage.setItem(entry.transactions);
+  console.log("transactions__", entry.transactions);
+  localStorage.removeItem(entry.transactions, JSON.parse(entry));
+  const localStorage = localStorage.getItem(entry.transactions);
   console.log("entry", entry);
-  console.log(localStorage);
+  console.log("local_storage", localStorage);
 }
 
 function saveData(data) {
