@@ -44,7 +44,7 @@
             class="collapse navbar-collapse justify-content-end"
             id="navbarSupportedContent"
           >
-            <div class="d-flex">
+            <div class="d-flex menu">
               <a href="home.html">
                 <button class="btn" type="button">
                   <i class="bi bi-house-door-fill color-secondary fs-4"> </i>
@@ -65,8 +65,15 @@
                 >
                   <i class="bi bi-person-circle fs-4"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                <ul
+                  class="dropdown-menu logout"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <button class="dropdown-item" id="button-logout">
+                      Sign out
+                    </button>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -79,7 +86,7 @@
         <div class="row">
           <div class="col d-flex mt-4 justify-content-start align-items-center">
             <i class="bi bi-cash-coin color-primary icon-detail"></i>
-            <span class="fs-2">R$ 0,00</span>
+            <span class="fs-2" id="total">R$ 0,00</span>
           </div>
           <div class="col d-flex mt-4 justify-content-end">
             <div class="text-center">
@@ -96,32 +103,32 @@
             <div class="container">
               <div class="row">
                 <div class="col-6">
-                  <span class="fs-4"
-                    >Inflow:
-                    <i class="bi bi-arrow-down-circle fs-2 align-middle"></i
-                  ></span>
+                  <span class="d-flex fs-4"
+                    ><i class="bi bi-arrow-down-circle fs-4 align-middle"></i>
+                    <p class="px-2">Inflow</p>
+                  </span>
                 </div>
                 <div class="col-6">
-                  <span class="fs-4"
-                    >Outflow:
-                    <i class="bi bi-arrow-up-circle fs-2 align-middle"></i
-                  ></span>
+                  <span class="d-flex fs-4">
+                    <i class="bi bi-arrow-up-circle fs-4 align-middle"></i>
+                    <p class="px-2">Outflow</p>
+                  </span>
                 </div>
                 <div class="col-12 my-2"><hr /></div>
               </div>
               <div class="row">
                 <div class="col-6">
-                  <div class="container">
-                    <div class="row"><div class="col">R$ 1000.00</div></div>
-                  </div>
+                  <div class="container p-0" id="cash-in-list"></div>
                 </div>
                 <div class="col-6">
-                  <div class="container">
-                    <div class="row"><div class="col">R$ 500.00</div></div>
-                  </div>
+                  <div class="container p-0" id="cash-out-list"></div>
                 </div>
                 <div class="col-12">
-                  <button type="button" class="btn my-4 default-button">
+                  <button
+                    type="button"
+                    class="btn mb-4 default-button"
+                    id="transactions-button"
+                  >
                     Show all
                   </button>
                 </div>
@@ -162,13 +169,15 @@
                   <label for="value-input" class="form-label">Value</label>
                   <input
                     type="number"
+                    step="any"
                     class="form-control"
                     id="value-input"
                     aria-describedby="emailHelp"
+                    required
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="description-input" class="form-label"
+                  <label for="description-input" class="form-label" required
                     >Description</label
                   >
                   <input
@@ -179,7 +188,12 @@
                 </div>
                 <div class="mb-3">
                   <label for="date-input" class="form-label">Date</label>
-                  <input type="date" class="form-control" id="date-input" />
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="date-input"
+                    required
+                  />
                 </div>
                 <div class="mb-3">
                   <div class="form-check form-check-inline">
@@ -230,5 +244,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="js/home.js"></script>
   </body>
 </html>

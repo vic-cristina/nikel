@@ -1,4 +1,33 @@
 const myModal = new bootstrap.Modal("#registerModal");
+let logged = sessionStorage.getItem("logged");
+const session = localStorage.getItem("session");
+
+checkLogged();
+
+//LOG-IN
+document.getElementById("login-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email-input").value;
+  const password = document.getElementById("password-input").value;
+  const checkSession = document.getElementById("session-check").checked;
+
+  const account = getAccount(email);
+
+  if (!account) {
+    alert("Oops, we weren't able to verify your info");
+    return;
+  }
+
+  if (account) {
+    if (account.password !== password) {
+      alert("Oops, we weren't able to verify your info");
+      return;
+    }
+    saveSession(email, checkSession);
+    window.location.href = "home.html";
+  }
+});
 
 //CREATE ACCOUNT
 
@@ -31,8 +60,36 @@ document
     }
   });
 
+function checkLogged() {
+  if (session) {
+    sessionStorage.setItem("logged", session);
+    logged = session;
+  }
+  if (logged) {
+    saveSession(logged, session);
+    window.location.href = "home.html";
+  }
+}
+
 function saveAccount(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
+}
+
+function saveSession(data, saveSession) {
+  if (saveSession) {
+    localStorage.setItem("session", data);
+  }
+
+  sessionStorage.setItem("logged", data);
+}
+
+function getAccount(key) {
+  const account = localStorage.getItem(key);
+  if (account) {
+    return JSON.parse(account);
+  } else {
+    return "";
+  }
 }
 
 // Bootstrap Tooltip

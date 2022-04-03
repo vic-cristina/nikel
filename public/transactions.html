@@ -45,7 +45,7 @@
             class="collapse navbar-collapse justify-content-end"
             id="navbarSupportedContent"
           >
-            <div class="d-flex">
+            <div class="d-flex menu">
               <a href="home.html">
                 <button class="btn" type="button">
                   <i class="bi bi-house-door-fill fs-4"> </i>
@@ -66,8 +66,13 @@
                 >
                   <i class="bi bi-person-circle fs-4"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                <ul
+                  class="dropdown-menu logout"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <a class="dropdown-item" id="button-logout">Sign out</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -106,7 +111,7 @@
                         <th scope="col">Description</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="transactions-list">
                       <tr>
                         <th scope="row">2022-01-04</th>
                         <td>50.00</td>
@@ -154,6 +159,7 @@
                   <label for="value-input" class="form-label">Value</label>
                   <input
                     type="number"
+                    step="any"
                     class="form-control"
                     id="value-input"
                     aria-describedby="emailHelp"
@@ -222,5 +228,27 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="js/transactions.js"></script>
   </body>
 </html>
+
+<!-- innerHTML JS ORIGINAL!!!!!!!!! -->
+<!-- <div class="row mb-4">
+  <div class="col-12">
+    <h3 class="fs-2">R$ ${cashIn[index].value.toFixed(2)}</h3>
+    <button class="delete-button">
+      <i class="bi bi-dash-circle"></i>
+    </button>
+    <div class="container p-0">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <p>${cashIn[index].description}</p>
+        </div>
+        <div class="col-12 col-md-3 d-flex justify-content-end">
+          <p>${cashIn[index].date}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->

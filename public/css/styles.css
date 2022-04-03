@@ -54,6 +54,18 @@
   transition: 1.5s;
 }
 
+.delete-button {
+  background: none;
+  border: none;
+  color: #000000;
+  transition: 0.5s;
+}
+
+.delete-button:hover {
+  background: none;
+  color: #9d0208;
+}
+
 .cancel-button {
   border-radius: 10px;
 }
@@ -114,4 +126,13 @@
   background-color: #ffffff;
   border-radius: 20px 20px 0px 0px;
   padding: 20px 0px 0px 0px;
+}
+
+.logout {
+  min-width: 2rem !important;
+}
+
+.menu {
+  margin-right: 30px;
+  margin-left: 30px;
 }
