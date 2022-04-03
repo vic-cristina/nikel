@@ -3,12 +3,12 @@
 /* the suggested background color was bothering me. the "e" of the nikel logo was blending in the background, so I've changed hues a bit */
 
 #login {
-  background: linear-gradient(120deg, #244280 44.9%, #ffffff 45%) no-repeat
+  background: linear-gradient(120deg, #244280 44.8%, #ffffff 45%) no-repeat
     fixed;
 }
 
 #app {
-  background: linear-gradient(120deg, #ffffff 44.9%, #244280 45%) no-repeat
+  background: linear-gradient(120deg, #ffffff 44.8%, #244280 45%) no-repeat
     fixed;
 }
 
